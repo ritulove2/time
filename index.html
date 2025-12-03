@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>টাইম কনভার্টার — সব দেশ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>টাইম কনভার্টার — সব দেশের সময়</h1>
+    <p class="tagline">দেশ খুঁজুন, টাইমজোন দেখুন, দুই টাইমজোনের সময় পার্থক্য ও সময় রূপান্তর করুন।</p>
+  </header>
+
+  <main>
+    <section class="search-panel">
+      <input id="searchInput" placeholder="দেশ নাম দিয়ে সার্চ করুন (বাংলা/ইংরেজি)..." />
+      <div id="countriesList" class="countries-list" aria-live="polite"></div>
+    </section>
+
+    <section class="detail-panel">
+      <div id="selectedCountry" class="country-card">
+        <h2 id="countryTitle">একটি দেশ সিলেক্ট করুন</h2>
+        <div id="timezonesContainer"></div>
+      </div>
+
+      <div class="converter-card">
+        <h3>টাইম কনভার্টর / পার্থক্য</h3>
+
+        <div class="row">
+          <label>From (দেশ/টাইমজোন)</label>
+          <select id="fromTZ"></select>
+        </div>
+
+        <div class="row">
+          <label>To (দেশ/টাইমজোন)</label>
+          <select id="toTZ"></select>
+        </div>
+
+        <div class="row">
+          <label>From Date & Time</label>
+          <input id="fromDateTime" type="datetime-local" />
+        </div>
+
+        <div class="row actions">
+          <button id="convertBtn">কনভার্ট করুন</button>
+          <button id="nowBtn">এখন থেকে কনভার্ট</button>
+        </div>
+
+        <div id="result" class="result"></div>
+      </div>
+    </section>
+
+    <footer>
+      <small>ডেটা উৎস: <a href="https://restcountries.com" target="_blank" rel="noopener">REST Countries API</a>. টাইম কনভার্সন ব্রাউজারের Intl API ব্যবহার করে।</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
